@@ -1,6 +1,6 @@
 # MIPAC_microProject
 
-#🎬 Web Player Project
+## 🎬 Web Player Project
 
 ### Overview
 This project features a customizable Web Player for HTTP Live Streaming (HLS) utilizing the hls.js JavaScript library. The player supports predefined playlists, manual bitrate switching, and displays essential video information. Additionally, it tracks and displays all URLs requested by the player in real-time.
