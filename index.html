@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HLS Player</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #2C3E50;
+      color: #ecf0f1;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+    #videoContainer {
+      margin: 20px;
+      width: 90%;
+      max-width: 1200px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: black;
+    }
+    #video {
+      width: 100%;
+      height: auto;
+    }
+    #controls {
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      max-width: 800px;
+    }
+    #urlInput {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #34495e;
+      color: #ecf0f1;
+    }
+    #loadButton {
+      padding: 10px 20px;
+      border: none;
+      background-color: #e74c3c;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #loadButton:hover {
+      background-color: #c0392b;
+    }
+    #playlistSelect {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #34495e;
+      color: #ecf0f1;
+    }
+    #bitrateButtons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    #bitrateButtons button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #bitrateButtons button:hover {
+      background-color: #2980b9;
+    }
+    #videoInfo {
+      margin: 20px;
+      text-align: center;
+      width: 90%;
+      max-width: 800px;
+    }
+    #urlList {
+      margin: 20px;
+      max-height: 200px;
+      overflow-y: scroll;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #34495e;
+      color: #ecf0f1;
+    }
+    #urlLogs {
+      list-style: none;
+      padding: 0;
+    }
+    #urlLogs li {
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
+    }
+    #urlLogs li:last-child {
+      border-bottom: none;
+    }
+    #clearLogs {
+      padding: 10px 20px;
+      border: none;
+      background-color: #e74c3c;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+    #clearLogs:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <div id="videoContainer">
+    <video id="video" controls></video>
+  </div>
+  <div id="controls">
+    <label for="urlInput">Source URL:</label>
+    <input type="text" id="urlInput" placeholder="Enter your video URL">
+    <button id="loadButton">Load</button>
+    <br><br>
+    <select id="playlistSelect">
+      <option value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8">Big Buck Bunny</option>
+      <option value="http://playertest.longtailvideo.com/adaptive/oceans_aes/oceans_aes.m3u8">Disney Nature</option>
+      <option value="https://test-streams.mux.dev/pts_shift/master.m3u8">DK Turntable</option>
+    </select>
+    <br><br>
+    <div id="bitrateButtons"></div>
+  </div>
+  <div id="videoInfo"></div>
+  <div id="urlList">
+    <h3>Requested URLs:</h3>
+    <ul id="urlLogs"></ul>
+    <button id="clearLogs">Clear</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="player.js"></script>
+</body>
+</html>
