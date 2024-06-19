@@ -7,12 +7,12 @@ This project features a customizable Web Player for HTTP Live Streaming (HLS) ut
 
 ### High-Level Requirements
 
-HLS Playback: Ensuring seamless playback of HLS streams.
-Predefined Playlists: Dropdown menu with 3 predefined HLS playlists.
-Manual Bitrate Switch: Buttons for manual bitrate selection.
-Video Information: Displaying bitrate, dimensions, and codecs info.
-URL Tracking: Real-time display of all player-requested URLs.
-GEO-Based Control: Implemented IP-based access control for premium content.
+HLS Playback: Ensuring seamless playback of HLS streams. <br />
+Predefined Playlists: Dropdown menu with 3 predefined HLS playlists. <br />
+Manual Bitrate Switch: Buttons for manual bitrate selection. <br />
+Video Information: Displaying bitrate, dimensions, and codecs info. <br />
+URL Tracking: Real-time display of all player-requested URLs. <br />
+GEO-Based Control: Implemented IP-based access control for premium content. <br />
 
 ### Files in the Project
 index.html: HTML structure for the player interface.
