@@ -15,6 +15,6 @@ URL Tracking: Real-time display of all player-requested URLs. <br />
 GEO-Based Control: Implemented IP-based access control for premium content. <br />
 
 ### Files in the Project
-index.html: HTML structure for the player interface.
-styles.css: CSS styles maintaining a cohesive dark blue theme.
-player.js: JavaScript logic for loading HLS streams, bitrate control, info display, and URL logging.
+index.html: HTML structure for the player interface. <br />
+styles.css: CSS styles maintaining a cohesive dark blue theme. <br />
+player.js: JavaScript logic for loading HLS streams, bitrate control, info display, and URL logging.<br />
